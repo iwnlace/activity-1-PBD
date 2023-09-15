@@ -2,44 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>C</title>
-    <link rel="stylesheet" href="C.css">
+    <title>Activity1</title>
+    <link rel="stylesheet" href="L.css">
     <script src="https://kit.fontawesome.com/57844e2b6e.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <div class="wrap">
-        <form name="cal">
-            <input type="text" name="display">
-            <br><br>
-            <input type="button" value="9" onclick ="cal.display.value+='9'" style= "background-color: #FFDDD2;">
-            <input type="button" value="8" onclick ="cal.display.value+='8'" style= "background-color: #FFDDD2;">
-            <input type="button" value="7" onclick ="cal.display.value+='7'" style= "background-color: #FFDDD2;">
-            <input type="button" value="+" onclick ="cal.display.value+='+'" style= "background-color: #A75D5D;">
-            <br><br>
-            <input type="button" value="6" onclick ="cal.display.value+='6'" style= "background-color: #FFDDD2;">
-            <input type="button" value="5" onclick ="cal.display.value+='5'" style= "background-color: #FFDDD2;">
-            <input type="button" value="4" onclick ="cal.display.value+='4'" style= "background-color: #FFDDD2;">
-            <input type="button" value="-" onclick ="cal.display.value+='-'" style= "background-color: #A75D5D;">
-            <br><br>
-            <input type="button" value="3" onclick ="cal.display.value+='3'" style= "background-color: #FFDDD2;">
-            <input type="button" value="2" onclick ="cal.display.value+='2'" style= "background-color: #FFDDD2;">
-            <input type="button" value="1" onclick ="cal.display.value+='1'" style= "background-color: #FFDDD2;">
-            <input type="button" value="*" onclick ="cal.display.value+='*'" style= "background-color: #A75D5D;">
-            <br><br>
-            <input type="button" value="0" onclick ="cal.display.value+='0'" style= "background-color: #FFDDD2;">
-            <input type="button" value="." onclick ="cal.display.value+='.'" style= "background-color: #FFDDD2;">
-            <input type="button" value="/" onclick ="cal.display.value+='/'" style= "background-color: #FFDDD2;">
-            <input type="button" value= "=" onclick ="cal.display.value =eval(cal.display.value)" style= "background-color: #A75D5D;">
-            <br><br>
-            <input type="button" value="DELETE" onclick ="cal.display.value=''" id="del" style= "background-color: #A75D5D;">
-
-            <a href="home.html">
-                <i class="fa-sharp fa-solid fa-home fa-2xl" style="color: palevioletred; margin-top: 30px; margin-left: 320px;"></i>
-              </a>
-              </i>
-
-        </form>
-
-
+    <div class="full-page">
+    <div class="navbar">
+        <nav>
+        <ul id='Items'>
+            <li><a href="dashboard.html"><i class="fa-solid fa-bars"></i></a></li>
+            <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+        </nav>
+    </div>
+    <div id='login-form'class='login-page'>
+        <div class="form-box">
+        <div class='button-box'>
+            <div id='btn'></div>
+            <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+            <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+        </div>
+            <form id='login' class='input-group-login'>
+            <input type='text'class='input-field'placeholder='Email' required >
+		    <input type='password'class='input-field'placeholder='Enter Password' required>
+		    <input type='checkbox'class='check-box'><span>Remember Password</span>
+		    <button type='submit'class='submit-btn'>Log in</button>
+		 </form>
+		 <form id='register' class='input-group-register'>
+		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field'placeholder='Last Name ' required>
+		     <input type='email'class='input-field'placeholder='Email' required>
+		     <input type='password'class='input-field'placeholder='Enter Password' required>
+		     <input type='password'class='input-field'placeholder='Confirm Password'  required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	    </form>
+        </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
