@@ -1,0 +1,20 @@
+.nav-pills li a:hover {
+    background-color: rgb(135, 5, 5);
+}
+body {
+    height: 100%;
+	width: 100%;
+	background-image: url(wallpaper.gif);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+.btn:hover {
+    background-color: rgb(135, 5, 5);
+    transition: 0.5s;
+
+}
+.btn:hover .dropdown-menu {
+    display: block;
+    margin-top: 200px;
+}
